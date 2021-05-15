@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
   })
   .then((dbCategoryData) => {
     if(!dbCategoryData){
-      res.status(404).json(dbCategoryData);
+      res.status(404).json({message: 'No items were found.'});
       return;
     }
     res.json(dbCategoryData);
@@ -41,7 +41,7 @@ router.get("/:id", (req, res) => {
   })
     .then((dbCategoryData) => {
       if(!dbCategoryData){
-        res.status(404).json(dbCategoryData);
+        res.status(404).json({message: 'No such item was found.'});
         return;
       }
       res.json(dbCategoryData);
